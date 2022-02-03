@@ -10,7 +10,9 @@ return (
         </div>
         <div className="account-info">
             <p>Welcome, {account.username}</p>
-            <img className="avatar" src={account.avatar.url} alt="account-image" />
+            <div className="ava">
+            <Image height={50} width={50} className="avatar" src={account.avatar.url} alt="account-image" />
+            </div>
         </div>
     </div>
 )

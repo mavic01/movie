@@ -1,6 +1,7 @@
 import { gql, GraphQLClient } from "graphql-request"
 import { useState } from "react"
 import Link from "next/link"
+import Image from "next/image"
 
 export const getServerSideProps = async (pageContext) => {
     const url = process.env.ENDPOINT
@@ -59,11 +60,11 @@ const changeToSeen = async (slug) => {
   })
 }
 
-const video = ({video}) => {
+const Video = ({video}) => {
   const [watching, setWatching] = useState(false)
     return (
-        <>
-          {!watching && <img className="video-img" src={video.thumbnail.url} alt={video.title} />}
+        <div style={{height: "100vh"}}>
+          {!watching && <Image height="900" width="1500" className="video-img" src={video.thumbnail.url} alt={video.title} />}
           {!watching && <div className="info">
             <p>{video.tags.join(", ")}</p>
             <p>{video.description}</p>
@@ -82,9 +83,9 @@ const video = ({video}) => {
               <source src={video.mp4.url} type="video/mp4" />
             </video>
           )}
-            <button className="footer-back" onClick={() => watching ? setWatching(false) : null} >Back</button>
-        </>
+            {watching && <button className="footer-back" onClick={() => watching ? setWatching(false) : null} >Back</button>}
+        </div>
     )
 }
 
-export default video
+export default Video

@@ -80,16 +80,25 @@ const Home = ({videos, account}) => {
       <Navbar account={account} />
       <div className="app">
         <div className="main-video" style={{objectFit: "cover"}}>
-          <img src={randomVideo(videos).thumbnail.url} alt={randomVideo(videos).title} />
+          {/* <img src={randomVideo(videos).thumbnail.url} alt={randomVideo(videos).title} /> */}
+          <Image className="main-video-img" height="720" width="1280" src={randomVideo(videos).thumbnail.url} alt={randomVideo(videos).title} />
         </div>
 
+        {/* <div className="video-feed">
+          <Link passHref href="#romance"><div className="franchise" id="romance"><Image layout="fill" src={romanceLogo} alt="romance"/></div></Link>
+          <Link passHref href="#thriller"><div className="franchise" id="thriller"><Image layout="fill" src={thrillerLogo} alt="thriller"/></div></Link>
+          <Link passHref href="#drama"><div className="franchise" id="drama"><Image layout="fill" src={dramaLogo} alt="drama"/></div></Link>
+          <Link passHref href="#classic"><div className="franchise" id="classic"><Image layout="fill" src={classicLogo} alt="classic"/></div></Link>
+          <Link passHref href="#crime"><div className="franchise" id="crime"><Image layout="fill" src={crimeLogo} alt="crime"/></div></Link>
+        </div> */}
         <div className="video-feed">
-          <Link passHref href="#romance"><div className="franchise" id="romance"><Image src={romanceLogo}/></div></Link>
-          <Link passHref href="#thriller"><div className="franchise" id="thriller"><Image src={thrillerLogo}/></div></Link>
-          <Link passHref href="#drama"><div className="franchise" id="drama"><Image src={dramaLogo}/></div></Link>
-          <Link passHref href="#classic"><div className="franchise" id="classic"><Image src={classicLogo}/></div></Link>
-          <Link passHref href="#crime"><div className="franchise" id="crime"><Image src={crimeLogo}/></div></Link>
+          <Link passHref href="#romance"><div className="franchise" id="romance">ROMANCE</div></Link>
+          <Link passHref href="#thriller"><div className="franchise" id="thriller">THRILLER</div></Link>
+          <Link passHref href="#drama"><div className="franchise" id="drama">DRAMA</div></Link>
+          <Link passHref href="#classic"><div className="franchise" id="classic">CLASSIC</div></Link>
+          <Link passHref href="#crime"><div className="franchise" id="crime">CRIME</div></Link>
         </div>
+
           <Section genre={"Recommended For You"} videos={unseenVideos(videos)}/> 
           <Section genre={"Family"} videos={filterVideos(videos, "family")}/>
           <Section id="romance" genre={"Romance"} videos={filterVideos(videos, "romance")}/>

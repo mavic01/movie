@@ -20,7 +20,7 @@ a {
   display: flex;
   justify-content: space-between;
   padding: 10px 0;
-  background-color: #0d1850;;
+  background-color: #0d1850;
 }
 
 .nav-logo{
@@ -39,9 +39,13 @@ a {
   margin-bottom: 50px;
 }
 
-.main-video img{
-  width: 100%;
+.main-video-img{
+  object-fit: cover;
 }
+
+/* .main-video img{
+  width: 100%;
+} */
 
 .card {
   width: 20%;
@@ -52,14 +56,16 @@ a {
 }
 
 .video-img{
-  width: 100%;
-  height: 100vh;
+  /* width: 100%;
+  height: 100vh; */
   position: absolute;
   top: 0;
 }
 
 .info{
   position: relative;
+  bottom:800px;
+  font-size: 20px;
   margin-top: 20%;
   margin-left: 50px;
   max-width: 50%;
@@ -126,21 +132,30 @@ a {
   }
 
   .avatar{
-    width: 50px;
-    height: 50px;
     border-radius: 50%;
     object-fit: cover;
     margin-left: 10px;
   }
 
+  .ava {
+    margin-left: 5px;
+  }
+
   .franchise {
-    width: 18%;
-    background-color: #808080;
+    width: 200px;
+    height: 200px;
+    background-color: rgb(31, 112, 119);
+    font-size: 25px;
     margin: 5px;
     border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
 }
 
 .video-feed{
@@ -152,15 +167,28 @@ a {
 }
 
  
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 320px) {
   .account-info p{
     font-size: 14px;
     /* color: rgba(255, 255, 255, 0.712); */
     color: #2687b8;
   }
+  .navbar{
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+  }
+  .avatar{
+    margin-left: 5px;
+  }
   .account-info img {
     width: 45px;
     height: 45px;
+  }
+  .account-info p {
+    font-size: 12px;
+    margin-left: 0;
+    font-weight: 500;
   }
   .card{
     width: 100%;
@@ -179,6 +207,8 @@ a {
   }
   .footer-back{
     margin: 3px;
+    padding: 10px;
+    font-size: 13px;
   }
   .nav-logo{
     margin-bottom: 20px;
@@ -192,4 +222,38 @@ a {
   color: #086E7D;
   font-weight: 700;
 }
+.franchise {
+  width: 80px;
+  height: 80px;
+  font-size: 10px;
 }
+.avatar{
+  width: 30px;
+  height: 30px;
+}
+.video-img{
+  width: 100vw;
+  height: 100vh;
+}
+.info{
+  position: relative;
+  top: 0px;
+  font-size: 10px;
+  margin-top: 20%;
+  margin-left: 50px;
+  max-width: 50%;
+  font-weight: 700;
+  color: #0c3f3e;
+}
+
+.video-overlay{
+  position: absolute;
+  padding: 7px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  color: #086E7D;
+  font-weight: 700;
+}
+}
+/* height="900" width="1500" */
