@@ -66,8 +66,8 @@ const Video = ({video}) => {
         <div style={{height: "100vh"}}>
           {!watching && <Image height="900" width="1500" className="video-img" src={video.thumbnail.url} alt={video.title} />}
           {!watching && <div className="info">
-            <p>{video.tags.join(", ")}</p>
-            <p>{video.description}</p>
+            <p className="desc">{video.tags.join(", ")}</p>
+            <p className="desc">{video.description}</p>
             <button 
               className="video-overlay"
               onClick={() => {

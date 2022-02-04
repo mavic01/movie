@@ -81,34 +81,54 @@ const Home = ({videos, account}) => {
       <div className="app">
         <div className="main-video" style={{objectFit: "cover"}}>
           {/* <img src={randomVideo(videos).thumbnail.url} alt={randomVideo(videos).title} /> */}
-          <Image className="main-video-img" height="720" width="1280" src={randomVideo(videos).thumbnail.url} alt={randomVideo(videos).title} />
+          <Image className="main-video-img" height="820" width="1332" src={randomVideo(videos).thumbnail.url} alt={randomVideo(videos).title} />
         </div>
-
         {/* <div className="video-feed">
-          <Link passHref href="#romance"><div className="franchise" id="romance"><Image layout="fill" src={romanceLogo} alt="romance"/></div></Link>
-          <Link passHref href="#thriller"><div className="franchise" id="thriller"><Image layout="fill" src={thrillerLogo} alt="thriller"/></div></Link>
-          <Link passHref href="#drama"><div className="franchise" id="drama"><Image layout="fill" src={dramaLogo} alt="drama"/></div></Link>
-          <Link passHref href="#classic"><div className="franchise" id="classic"><Image layout="fill" src={classicLogo} alt="classic"/></div></Link>
-          <Link passHref href="#crime"><div className="franchise" id="crime"><Image layout="fill" src={crimeLogo} alt="crime"/></div></Link>
-        </div> */}
-        <div className="video-feed">
           <Link passHref href="#romance"><div className="franchise" id="romance">ROMANCE</div></Link>
           <Link passHref href="#thriller"><div className="franchise" id="thriller">THRILLER</div></Link>
           <Link passHref href="#drama"><div className="franchise" id="drama">DRAMA</div></Link>
           <Link passHref href="#classic"><div className="franchise" id="classic">CLASSIC</div></Link>
           <Link passHref href="#crime"><div className="franchise" id="crime">CRIME</div></Link>
+        </div> */}
+        <div className="home-card">
+          <div className="home-card-child">
+            <h3>Recommended For You</h3>
+            <Section className="unseen" videos={unseenVideos(videos)}/> 
+          </div>
+          <div className="home-card-child">
+            <h3>Family</h3>
+            <Section className="family" videos={filterVideos(videos, "family")}/>
+          </div>
+          <div className="home-card-child">
+            <h3>Romance</h3>
+            <Section className="romance" videos={filterVideos(videos, "romance")}/>
+          </div>
+          <div className="home-card-child">
+            <h3>Thriller</h3>
+            <Section className="thriller" videos={filterVideos(videos, "thriller")}/>
+          </div>
+          <div className="home-card-child">
+            <h3>Horror</h3>
+            <Section className="horror" videos={filterVideos(videos, "horror")}/>
+          </div>
+          <div className="home-card-child">
+            <h3>Comedy</h3>
+            <Section className="comedy" videos={filterVideos(videos, "comedy")}/>
+          </div>
+          <div className="home-card-child">
+            <h3>Drama</h3>
+            <Section className="drama" videos={filterVideos(videos, "drama")}/>
+          </div>
+          <div className="home-card-child">
+            <h3>Classic</h3>
+            <Section className="classic" videos={filterVideos(videos, "classic")}/>
+          </div>
+          <div className="home-card-child">
+            <h3>Crime</h3>
+            <Section className="crime" videos={filterVideos(videos, "crime")}/>
+          </div>
+           
         </div>
-
-          <Section genre={"Recommended For You"} videos={unseenVideos(videos)}/> 
-          <Section genre={"Family"} videos={filterVideos(videos, "family")}/>
-          <Section id="romance" genre={"Romance"} videos={filterVideos(videos, "romance")}/>
-          <Section id="thriller" genre={"Thriller"} videos={filterVideos(videos, "thriller")}/>
-          <Section genre={"Horror"} videos={filterVideos(videos, "horror")}/>
-          <Section genre={"Comedy"} videos={filterVideos(videos, "comedy")}/>
-          <Section id="drama" genre={"Drama"} videos={filterVideos(videos, "drama")}/>
-          <Section id="classic" genre={"Classic"} videos={filterVideos(videos, "classic")}/>
-          <Section id="crime" genre={"Crime"} videos={filterVideos(videos, "crime")}/>
-        
       </div>
     </>
   ) 

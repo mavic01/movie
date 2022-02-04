@@ -6,7 +6,12 @@ body {
   Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   background-color: #13151F;
   color: white;
-  margin: 2px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 a {
@@ -27,8 +32,13 @@ a {
   cursor: pointer;
 }
 
+.section{
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .app{
-  margin: 20px;
+  margin: 6px;
 }
 
 .main-video {
@@ -43,16 +53,32 @@ a {
   object-fit: cover;
 }
 
+.home-card{
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 10px;
+}
+.home-card-child{
+  margin-bottom: 15px;
+}
+
 /* .main-video img{
   width: 100%;
 } */
 
 .card {
-  width: 20%;
-  height: 200px;
-  border-radius: 5%;
-  margin: 5px;
+  border-radius: 10%;
+  margin: 8px;
   filter: drop-shadow(5px 5px 10px #000);
+  transition: all 1s ease;
+}
+.card:hover{
+  transform: scale(1.1);
+}
+
+.desc{
+  margin-bottom: 8px;
+  color: white;
 }
 
 .video-img{
@@ -81,8 +107,11 @@ a {
   border-radius: 5px;
   color: #086E7D;
   font-weight: 700;
+  transition: all 1s ease;
 }
-
+.video-overlay{
+  transform: scale(1.07);
+}
 .info-footer{
   height: 40px;
 }
@@ -100,7 +129,7 @@ a {
     border-radius: 28px;
     font-family: Arial;
     color: #ffffff;
-    font-size: 20px;
+    font-size: 15px;
     padding: 7px 14px 7px 14px;
     text-decoration: none;
     display: flex;
@@ -158,12 +187,8 @@ a {
     -o-border-radius: 10px;
 }
 
-.video-feed{
-  display: flex;
-}
-
 .logo-wrapper {
-  padding: 10px 30px;
+  padding: 0 15px;
 }
 
  
@@ -174,16 +199,21 @@ a {
     color: #2687b8;
   }
   .navbar{
-    width: 100vw;
+    width: 100%;
+    height: 70px;
     display: flex;
     justify-content: space-between;
+    background-color: #13151F;
+  }
+  .navbar p {
+    color: #7882A4;
   }
   .avatar{
     margin-left: 5px;
   }
-  .account-info img {
-    width: 45px;
-    height: 45px;
+  .account-info{
+    padding: 0 15px 15px 15px;
+
   }
   .account-info p {
     font-size: 12px;
@@ -203,9 +233,6 @@ a {
     align-items: center;
     justify-content: center;
     margin-bottom: 7px;
-  }
-  .info p{
-    color: #0c3f3e;
   }
   .info-footer{
     height: 10px;
@@ -248,7 +275,7 @@ a {
   margin-left: 50px;
   max-width: 50%;
   font-weight: 700;
-  color: #0c3f3e;
+  color: #fff;
 }
 
 .video-overlay{
@@ -259,6 +286,14 @@ a {
   border-radius: 5px;
   color: #086E7D;
   font-weight: 700;
+}
+.desc{
+  color: white;
+  font-size: 14.5px;
+}
+.imgg-cont{
+  height: 100vh;
+  width: 100vw;
 }
 }
 /* height="900" width="1500" */

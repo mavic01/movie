@@ -2,9 +2,9 @@ import Image from "next/image"
 
 const Card = ({thumbnail}) => {
     return (
-        <>
-            <Image height="190" width="190" className="card" src={thumbnail.url} alt={thumbnail.title} />
-        </>
+        <div className="card">
+            <Image height="300" width="300" src={thumbnail.url} alt={thumbnail.title} />
+        </div>
     )
 }
 
