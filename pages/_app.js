@@ -12,7 +12,7 @@
 // export default MyApp
 
 import '../styles/globals.css'
-import Layout from "../components/Layout.jsx"
+// import Layout from "../components/Layout.jsx"
 
 function MyApp({ Component, pageProps }) {
   return (
